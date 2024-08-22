@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+
+<style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Outfit",Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background:blur(15px);
+    background:url(mount.jpg);
+background-position: center;
+background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    min-height:100vh;
+    backdrop-filter:blur(5px);
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    background: transparent;
+    border-radius:2%;
+    box-shadow: 1px 1px 10px 2px rgb(103, 104, 104);
+    border:none;
+    outline:none;
+    overflow: hidden;
+    transition:0.5s;
+    animation: ease-in;
+
+}.container:hover{
+    transform: scale(1.1);
+    box-shadow: 2px 2px 15px 2px rgb(255, 248, 30);;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:whitesmoke;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.input-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0ba1f1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border:none;
+    outline:none;
+    overflow: hidden;
+    transition:0.5s;
+    animation: ease-in;
+}
+
+.input-group button:hover {
+    background-color: #feed04;
+    color: black;
+}.input-group button:active{
+    transform: scale(1.06);
+    background-color: #feed04;
+    color: white;
+   
+}
+
+
+
+
+
+</style>
+
+
+
+
+
+
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm" onsubmit="return validateForm()">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <div class="input-group">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+    <script >
+
+function validateForm() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return false;
+    }
+
+    // Simple email validation
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+    // Additional validation can be added here
+
+    alert("Registration successful!");
+    return true; // You can return false here if you don't want to submit the form
+}
+
+
+
+
+
+    </script>
+</body>
+</html>
