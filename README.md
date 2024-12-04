@@ -31,7 +31,7 @@ Styled using the Outfit font and modern CSS properties like box-shadow and backd
 
  Instructions for Running the Project
 Clone the Repository:
-git clone https://github.com/your-username/registration-form.git
+git clone https://shyamv685.github.io/signform/
 
 
 Navigate to the Folder:
